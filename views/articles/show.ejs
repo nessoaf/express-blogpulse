@@ -6,6 +6,10 @@
 
 <p><%= article.content %></p>
 
-<hr />
+<% article.comments.forEach(comment => { %>
+  <hr />
+<p style="font-style: italic;"><%= comment</p>
+})
+
 
 <a href="/">&larr; Back Home</a>
