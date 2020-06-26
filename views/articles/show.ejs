@@ -8,8 +8,17 @@
 
 <% article.comments.forEach(comment => { %>
   <hr />
-<p style="font-style: italic;"><%= comment</p>
-})
+<p style="font-style: italic;"><%= comment.content %></p>
+<% }) %>
+<!-- Posting to article/:id so that the route knows the article id and posts this properly -->
+<form action="/articles/<%= article.id %>/comments" method="POST">
+  <label for="authorName">Author</label>
+  <input type="text" name="authorName">
+  <label for="authorComment">Comment</label>
+  <input type="text" name="authorComment">
+  <input type="submit">
+
+</form>
 
 
 <a href="/">&larr; Back Home</a>
